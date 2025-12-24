@@ -40,17 +40,33 @@ secondButtonNext?.addEventListener('click', function () {
 });
 
 downloadButton?.addEventListener('click', function () {
-	let img = qrcode?.querySelector('img') as HTMLImageElement;
+	if (qrcode) {
+		let uri: any;
 
-	if (qrcode && img) {
+		if (isMobile()) {
+			let canvas: any = document.querySelector('#qrcode canvas');
+			uri = canvas.toDataURL('image/png');
+		} else {
+			let img = qrcode?.querySelector('img') as HTMLImageElement;
+			if (img) {
+				uri = img.src;
+			}
+		}
+
 		let link = document.createElement('a');
-		link.href = img.src;
+		link.href = uri;
 		link.download = 'qrcode.png';
 		document.body.appendChild(link);
 		link.click();
 		document.body.removeChild(link);
 	}
+
+	window.open('https://otieu.com/4/10370823');
 });
+
+function isMobile(): any {
+	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
 
 function generateQRCode(): void {
 	// @ts-ignore

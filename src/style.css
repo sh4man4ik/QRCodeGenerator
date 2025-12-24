@@ -216,10 +216,16 @@ input[type='color']::-webkit-color-swatch {
 #qrcode {
 	display: flex;
 	justify-content: center;
-	margin-top: clamp(10px, 4vw, 20px);
+	margin-top: clamp(5px, 4vw, 10px);
+	width: 100%;
 }
 
 #qrcode img {
 	max-width: 300px;
-	width: 90%;
+	width: 100%;
+}
+
+#qrcode canvas {
+	max-width: 300px;
+	width: 100%;
 }
