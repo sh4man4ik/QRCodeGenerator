@@ -1,0 +1,9 @@
+'use strict';
+Object.defineProperty(exports, '__esModule', { value: true });
+var vite_1 = require('vite');
+// https://vite.dev/config/
+exports.default = (0, vite_1.defineConfig)({
+	server: {
+		port: 443
+	}
+});
