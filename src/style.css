@@ -57,6 +57,9 @@ body {
 
 .form-control {
 	width: clamp(170px, 70vw, 350px);
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
 }
 
 .input {
@@ -162,6 +165,11 @@ body {
 	border-radius: clamp(3px, 2vw, 6px);
 	cursor: pointer;
 	transition: all 0.3s ease;
+	background-color: #191737;
+	padding: 0px 8px;
+}
+
+#qrcode-size:focus {
 }
 
 input[type='number']::-webkit-inner-spin-button,
@@ -183,17 +191,6 @@ input[type='color']::-webkit-color-swatch-wrapper {
 
 input[type='color']::-webkit-color-swatch {
 	border: none;
-}
-
-.input-border-base {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	height: 3px;
-	width: 100%;
-	background-color: rgba(229, 231, 235, 0.2);
-	border-radius: 2px;
-	pointer-events: none;
 }
 
 #preview-qrcode {
