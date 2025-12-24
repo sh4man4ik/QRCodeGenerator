@@ -1,0 +1,225 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #0e0b1f;
+	user-select: none;
+}
+
+* {
+	font-family: 'Inter', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	color: #e5e7eb;
+}
+
+.font-large {
+	font-size: clamp(24px, 6vw, 36px);
+}
+.font-small {
+	font-size: clamp(12px, 2vw, 16px);
+}
+
+#title {
+	font-weight: bold;
+	margin: clamp(20px, 5vw, 40px) 30px;
+	text-align: center;
+	letter-spacing: -0.02em;
+	line-height: 1.1;
+}
+
+#title span {
+	background: linear-gradient(90deg, #6366f1, #a855f7);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-shadow: 0 0 25px rgba(99, 102, 241, 0.1);
+}
+
+#enter-link {
+	display: grid;
+	justify-self: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	padding: clamp(8px, 2vw, 15px) clamp(15px, 4vw, 25px) clamp(20px, 4vw, 30px) clamp(15px, 4vw, 25px);
+	border-radius: clamp(6px, 2vw, 12px);
+	background-color: #121026;
+	box-shadow:
+		rgba(0, 0, 0, 0.25) 0px 14px 28px,
+		rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#input-link-container {
+	position: relative;
+}
+
+.form-control {
+	width: clamp(170px, 70vw, 350px);
+}
+
+.input {
+	background-color: transparent;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px 0px;
+	border: none;
+	border-bottom: 3px solid rgba(229, 231, 235, 0.2);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input:focus {
+	outline: none;
+}
+
+.input-border {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 3px;
+	width: 0%;
+	background: linear-gradient(90deg, #6366f1, #a855f7);
+	transition: width 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+	border-radius: 2px;
+}
+
+.input:focus + .input-border {
+	width: 100%;
+}
+
+.input::placeholder {
+	color: rgba(229, 231, 235, 0.6);
+}
+
+.button-next {
+	margin-top: clamp(10px, 2vw, 20px);
+	width: 100%;
+	padding: clamp(7px, 4vw, 15px) 0px;
+	border: none;
+	border-radius: clamp(6px, 2vw, 12px);
+	background: linear-gradient(90deg, #6366f1, #a855f7);
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button-next:hover {
+	box-shadow: 0 0 25px rgba(99, 102, 241, 0.2);
+}
+
+.button-next:active {
+	background: linear-gradient(90deg, #5e60e4, #9c4ee4);
+}
+
+#setup-qrcode {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	flex-direction: column;
+	gap: clamp(15px, 3vw, 25px);
+	width: clamp(170px, 70vw, 350px);
+	padding: clamp(10px, 3vw, 20px) clamp(15px, 4vw, 25px) clamp(20px, 4vw, 30px) clamp(15px, 4vw, 25px);
+	border-radius: clamp(6px, 2vw, 12px);
+	background-color: #121026;
+	box-shadow:
+		rgba(0, 0, 0, 0.25) 0px 14px 28px,
+		rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.input-size-container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.input-setting {
+	width: 100%;
+	height: clamp(20px, 6vw, 30px);
+	padding: 0;
+	border: none;
+	border-radius: clamp(3px, 2vw, 6px);
+	cursor: pointer;
+	transition: all 0.3s ease;
+	background-color: transparent;
+}
+
+.input-setting:focus {
+	box-shadow: 0 0 25px rgba(99, 102, 241, 0.2);
+}
+
+#qrcode-size {
+	width: 100%;
+	height: clamp(20px, 6vw, 30px);
+	padding: 0;
+	border: none;
+	border-radius: clamp(3px, 2vw, 6px);
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type='number'] {
+	-webkit-appearance: none;
+	-moz-appearance: textfield;
+	appearance: none;
+	margin: 0;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+	border: none;
+}
+
+.input-border-base {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 3px;
+	width: 100%;
+	background-color: rgba(229, 231, 235, 0.2);
+	border-radius: 2px;
+	pointer-events: none;
+}
+
+#preview-qrcode {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	flex-direction: column;
+	gap: clamp(15px, 3vw, 25px);
+	width: clamp(170px, 70vw, 350px);
+	padding: clamp(10px, 3vw, 20px) clamp(15px, 4vw, 25px) clamp(20px, 4vw, 30px) clamp(15px, 4vw, 25px);
+	border-radius: clamp(6px, 2vw, 12px);
+	background-color: #121026;
+	box-shadow:
+		rgba(0, 0, 0, 0.25) 0px 14px 28px,
+		rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#qrcode {
+	display: flex;
+	justify-content: center;
+	margin-top: clamp(10px, 4vw, 20px);
+}
+
+#qrcode img {
+	max-width: 300px;
+	width: 90%;
+}

@@ -3,15 +3,78 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="/src/style.css" />
 		<title>QR Code Generator</title>
 	</head>
 	<body>
-		<div id="enter-link"></div>
+		<header>
+			<p id="title" class="font-large">Free <span>QR Code</span> Generator</p>
+		</header>
 
-		<div id="setup-colors"></div>
+		<div id="enter-link">
+			<div id="input-link-container">
+				<div class="form-control">
+					<input
+						id="input-link"
+						class="input input-alt font-small"
+						placeholder="Enter your website URL"
+						required
+						type="text"
+					/>
 
-		<div id="preview"></div>
+					<span class="input-border input-border-alt"></span>
+				</div>
+			</div>
+
+			<button class="font-small button-next" id="first-next-button">NEXT</button>
+		</div>
+
+		<div id="setup-qrcode">
+			<div class="input-size-container">
+				<div class="form-control">
+					<label for="qrcode-size" class="input-label font-small">Size (px)</label>
+					<input id="qrcode-size" class="input input-alt font-small" value="500" required type="number" />
+
+					<span class="input-border-base"></span>
+				</div>
+			</div>
+
+			<div class="input-size-container">
+				<label for="foreground-color" class="input-label font-small">Foreground</label>
+				<input
+					type="color"
+					name="foreground-color"
+					id="foreground-color"
+					class="input-setting"
+					value="#000000"
+				/>
+			</div>
+
+			<div class="input-size-container">
+				<label for="background-color" class="input-label font-small">Background</label>
+				<input
+					type="color"
+					name="background-color"
+					id="background-color"
+					class="input-setting"
+					value="#ffffff"
+				/>
+			</div>
+
+			<button class="font-small button-next" id="second-next-button">NEXT</button>
+		</div>
+
+		<div id="preview-qrcode">
+			<div id="qrcode"></div>
+
+			<button class="font-small button-next" id="download-button">DOWNLOAD</button>
+		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 		<script type="module" src="/src/script.ts"></script>
