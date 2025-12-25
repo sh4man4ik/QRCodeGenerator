@@ -1,7 +1,11 @@
+# QR Code Generator
+
+![Screenshot](./Screenshot.png)
+
 # What is it?
 
-This is a website for generating QR Codes. You can customize the colors and link of the QR Code. You can also download
-it in PNG and SVG formats.
+This is a website for **generating QR Codes**. You can customize the **colors** and **link** of the QR Code. You can
+also **download** it in **PNG** format.
 
 # Quick Start
 
